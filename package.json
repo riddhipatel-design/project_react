@@ -1,0 +1,25 @@
+{
+  "name": "project_react",
+  "version": "1.0.0",
+  "description": "Learning and creating react projects",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "Riddhi"
+  ],
+  "author": "Riddhi Patel",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riddhipatel-design/project_react.git"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
