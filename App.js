@@ -1,16 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div",
-    {id: "parent",},
-    React.createElement("div",
-    {id: "child",}, 
-    [React.createElement("h1",
-    {}, "I am H1 tag"), React.createElement("h2",
-    {}, "I am H2 tag")]
-    )
-)
+const Title = () => (
+    
+    <h1 className="heading">Namaste</h1> )
 
+ const elem = <span> React Element inside Component</span>   
+
+const HeadingComponenet = () => (
+    <div>
+    <Title />
+   <h1>Hello React</h1>
+   {elem}
+   </div>
+   )
+
+   // you can also put function Componenet inside React Element
+
+   const Title2 = (
+    <div>
+    <h3>Component inside Element</h3>
+    <HeadingComponenet />
+    </div>
+   )
+//const heading = React.createElement("h1", {}, "Namaste")
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(parent);
-root.render(parent);
+
+root.render(Title2);
