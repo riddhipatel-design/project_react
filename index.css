@@ -42,7 +42,8 @@ width: 150px;
   transition-timing-function: ease-out;
 }
 .res-card img {
-    width: 100%;
-    height: auto;
     padding: 0px;
+}
+.filter {
+    margin: 10px;
 }
