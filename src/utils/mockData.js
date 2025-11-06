@@ -1,133 +1,140 @@
 const resList = [
-  {
-    id: 1,
-    name: "Bombay Spice",
-    cuisine: "Indian",
-    rating: 4.6,
-    deliveryTime: "30-40 min",
-    priceRange: "$$",
-    image:
-      "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 2,
-    name: "Mama Mia Pizza",
-    cuisine: "Italian",
-    rating: 4.3,
-    deliveryTime: "25-35 min",
-    priceRange: "$$",
-    image:
-      "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 3,
-    name: "Dragon Wok",
-    cuisine: "Chinese",
-    rating: 3.5,
-    deliveryTime: "20-30 min",
-    priceRange: "$",
-    image:
-      "https://images.pexels.com/photos/2092903/pexels-photo-2092903.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 4,
-    name: "Green Bowl",
-    cuisine: "Healthy / Salad",
-    rating: 4.2,
-    deliveryTime: "15-25 min",
-    priceRange: "$$",
-    image:
-      "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 5,
-    name: "Taco Fiesta",
-    cuisine: "Mexican",
-    rating: 3.4,
-    deliveryTime: "20-30 min",
-    priceRange: "$",
-    image:
-      "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 6,
-    name: "Sushi World",
-    cuisine: "Japanese",
-    rating: 4.7,
-    deliveryTime: "30-45 min",
-    priceRange: "$$$",
-    image:
-      "https://images.pexels.com/photos/357756/pexels-photo-357756.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 7,
-    name: "Burger Hub",
-    cuisine: "Fast Food",
-    rating: 4.1,
-    deliveryTime: "15-20 min",
-    priceRange: "$",
-    image:
-      "https://images.pexels.com/photos/1639567/pexels-photo-1639567.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 8,
-    name: "Curry Leaf",
-    cuisine: "South Indian",
-    rating: 3.8,
-    deliveryTime: "25-35 min",
-    priceRange: "$$",
-    image:
-      "https://images.pexels.com/photos/1117863/pexels-photo-1117863.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 9,
-    name: "Falafel House",
-    cuisine: "Middle Eastern",
-    rating: 3.3,
-    deliveryTime: "20-25 min",
-    priceRange: "$",
-    image:
-      "https://images.pexels.com/photos/1640775/pexels-photo-1640775.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 10,
-    name: "French Cravings",
-    cuisine: "French",
-    rating: 4.6,
-    deliveryTime: "30-40 min",
-    priceRange: "$$$",
-    image:
-      "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 11,
-    name: "Curry Leaf",
-    cuisine: "South Indian",
-    rating: 3.8,
-    deliveryTime: "25-35 min",
-    priceRange: "$$",
-    image:
-      "https://images.pexels.com/photos/1117863/pexels-photo-1117863.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 12,
-    name: "Falafel House",
-    cuisine: "Middle Eastern",
-    rating: 3.3,
-    deliveryTime: "20-25 min",
-    priceRange: "$",
-    image:
-      "https://images.pexels.com/photos/1640775/pexels-photo-1640775.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 13,
-    name: "French Cravings",
-    cuisine: "French",
-    rating: 4.6,
-    deliveryTime: "30-40 min",
-    priceRange: "$$$",
-    image:
-      "https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&w=800",
-  }
-];
+{
+data: {
+id: "255655",
+name: "Cake & Cream",
+cloudinaryImageId: "ac57cc371e73f96f812613f58457aca3",
+areaName: "Jairaj Nagar",
+costForTwo: "₹200 for two",
+cuisines: ["Bakery", "Hot-dog", "pastery", "Cake", "Thick- shake"],
+avgRating: 4.3,
+veg: true,
+parentId: "54670",
+avgRatingString: "4",
+totalRatingsString: "20+",
+},
+},
+{
+data: {
+id: "350363",
+name: "Haldiram's Sweets and Namkeen",
+cloudinaryImageId: "25c3a7d394d6c5556b134385f7d665b0",
+avgRating: 4.6,
+veg: true,
+cuisines: [
+"North Indian",
+"South Indian",
+"Chinese",
+"Pizzas",
+"Fast Food",
+],
+parentId: "391465",
+avgRatingString: "4.6",
+totalRatingsString: "100+",
+},
+},
+{
+data: {
+id: "154891",
+name: "Rasraj Restaurant",
+cloudinaryImageId: "egbr63ulc8h1zgliivd8",
+locality: "Civil Line",
+areaName: "Civil Lines",
+costForTwo: "₹250 for two",
+cuisines: [
+"North Indian",
+"South Indian",
+"Street Food",
+"Chinese",
+"Pizzas",
+"Fast Food",
+],
+avgRating: 4.2,
+},
+},
+{
+data: {
+id: "745961",
+name: "Balaji Restaurant",
+cloudinaryImageId: "b8672fe52944c3599ea324d99d608300",
+locality: "Sai Rubber Stamp",
+areaName: "Jairaj Nagar",
+costForTwo: "₹149 for two",
+cuisines: ["South Indian", "North Indian"],
+avgRating: 4.8,
+veg: true,
+},
+},
+{
+data: {
+id: "798745",
+name: "Friends Restaurant",
+cloudinaryImageId: "b14cd9fc40129fcfb97aa7e621719d07",
+locality: "Gayatri Nagar",
+areaName: "Jairaj Nagar",
+costForTwo: "₹150 for two",
+cuisines: ["North Indian", "Chinese", "Biryani", "Tandoor", "Kebabs"],
+avgRating: 4.2,
+parentId: "84308",
+},
+},
+{
+data: {
+id: "314737",
+name: "RASOI the KITCHEN",
+cloudinaryImageId: "yjymo9nhyn7rhvafsrd3",
+locality: "Sriram Chowk",
+areaName: "Bazar Ward",
+costForTwo: "₹200 for two",
+cuisines: ["North Indian", "Maharashtrian", "Chinese",
+"Thalis"],
+avgRating: 3.9,
+parentId: "167341",
+},
+},
+{
+data: {
+id: "201454",
+name: "Morsels restaurants",
+cloudinaryImageId: "aafe71251ef5328784652dc838cd91f3",
+locality: "Bazar Ward",
+areaName: "Chandrapur Locality",
+costForTwo: "₹300 for two",
+cuisines: ["North Indian", "South Indian"],
+avgRating: 3.2,
+veg: true,
+parentId: "139266",
+avgRatingString: "4.2",
+},
+},
+{
+data: {
+id: "266124",
+name: "Trimurti Restaurant",
+cloudinaryImageId: "8135c0066b06e2925c66930be4e9ffb5",
+locality: "Bazar Ward",
+areaName: "Chandrapur Locality",
+costForTwo: "₹150 for two",
+cuisines: ["Desserts"],
+avgRating: 3.9,
+veg: true,
+parentId: "217751",
+avgRatingString: "4.4",
+},
+},
+{
+data: {
+id: "509254",
+name: "Saha Restaurant",
+cloudinaryImageId: "z1ez4uc9idul2uj2v87g",
+areaName: "Jairaj Nagar",
+costForTwo: "₹300 for two",
+cuisines: ["North Indian", "Biryani", "Thalis", "Beverages"],
+avgRating: 3.7,
+parentId: "174585",
+avgRatingString: "3.7",
+},
+}
+]
+
 export default resList;
