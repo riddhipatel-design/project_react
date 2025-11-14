@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   // State for restaurant list
@@ -10,6 +11,7 @@ const Body = () => {
   const [filteredRestaurent, setFilteredRestaurent] = useState([]);
   const [searchText, setSearchText] = useState("");
 
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -37,21 +39,25 @@ const Body = () => {
     setFilteredRestaurent(list);
   };
 
+const onlineStatus = useOnlineStatus();
+if (onlineStatus === false) return <h1>Looks like you are offline!! Please check your internet connection.</h1>
+
+
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="body flex flex-col items-center w-full">
+      <div className="filter flex items-center gap-2 mb-6">
+        <div className="search flex items-center gap-2">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black px-2 py-1 rounded w-72 hover:border-blue-500"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-          <button
+          <button className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
             onClick={() => {
               //filter the restaurent cards and update the UI
               //searchtext
@@ -72,7 +78,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
           onClick={() => {
             const filteredList = listOfRestaurant.filter(
               (res) => res.info.avgRating > 4.3
@@ -85,7 +91,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="res-container">
+      <div className="res-container justify-center gap-6 max-w-[1400px] mx-auto">
         {filteredRestaurent.map((restaurant) => (
           <Link
             className="link-wrapper"
