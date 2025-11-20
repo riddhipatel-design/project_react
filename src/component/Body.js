@@ -1,9 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   // State for restaurant list
@@ -11,7 +12,6 @@ const Body = () => {
   const [filteredRestaurent, setFilteredRestaurent] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  
   useEffect(() => {
     fetchData();
   }, []);
@@ -39,9 +39,17 @@ const Body = () => {
     setFilteredRestaurent(list);
   };
 
-const onlineStatus = useOnlineStatus();
-if (onlineStatus === false) return <h1>Looks like you are offline!! Please check your internet connection.</h1>
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <h1>
+        Looks like you are offline!! Please check your internet connection.
+      </h1>
+    );
 
+  const RestaurantCardWithDiscount = withDiscountLabel(RestaurantCard);
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
@@ -52,12 +60,15 @@ if (onlineStatus === false) return <h1>Looks like you are offline!! Please check
           <input
             type="text"
             className="border border-solid border-black px-2 py-1 rounded w-72 hover:border-blue-500"
+            placeholder="Search"
+            name="search"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
-          <button className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
+          <button
+            className="px-3 py-1 bg-gray-200 rounded-lg hover:bg-gray-300"
             onClick={() => {
               //filter the restaurent cards and update the UI
               //searchtext
@@ -89,6 +100,15 @@ if (onlineStatus === false) return <h1>Looks like you are offline!! Please check
         >
           Top Rated Restaurant
         </button>
+        <div className="search flex items-center gap-2">
+          <label>Username :</label>
+          <input
+            className="border border-solid border-black outline-0 px-2 py-1 rounded w-50 hover:border-blue-500 active:border-blue-500"
+            placeholder="user name"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="res-container justify-center gap-6 max-w-[1400px] mx-auto">
@@ -98,7 +118,11 @@ if (onlineStatus === false) return <h1>Looks like you are offline!! Please check
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info?.aggregatedDiscountInfoV3 ? (
+              <RestaurantCardWithDiscount resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

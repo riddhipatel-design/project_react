@@ -1,5 +1,7 @@
 import UserClass from "./UserClass";
-import User from "./User";
+import User from "./User"
+import UserContext from "../utils/UserContext";
+import { Component } from "react";
 
 const About = () => {
   return (
@@ -8,7 +10,13 @@ const About = () => {
         <h2>Hello World!!</h2>
         <UserClass name={"Riddhi"} location={"Cambridge"}/>
         <User name={"Riddhi"} location={"Cambridge"}/>
+        <div>
+          <UserContext.Consumer>
+            {({ loggedInUser }) => (<h1>{loggedInUser}</h1>)}
+          </UserContext.Consumer>
         </div>
+        </div>
+       
   )
 }
 

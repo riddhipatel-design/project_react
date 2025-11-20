@@ -1,6 +1,6 @@
 import "../index.css";   // Tailwind setup (with @tailwind directives)
 import "./App.css";     // Your own custom CSS
-import React, { lazy, Suspense} from "react";
+import React, { lazy, Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
@@ -11,15 +11,29 @@ import Error from "./component/Error";
 import RestaurantMenu from "./component/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import RestaurantMenu from "./component/RestaurantMenu";
+import UserContext from "./utils/UserContext";
+
 
 const Grocery = lazy(() => import("./component/Grocery"));
 
 const AppLayout = () => {
+
+  //authentication
+  const [userName, setUserName] = useState ();
+
+  useEffect(()=> {
+    const data = {name: "Riddhi Patel"};
+ 
+  setUserName(data.name);
+ }, []);
+
   return (
+    <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
     <div className="app">
       <Header />
       <Outlet />
     </div>
+   </UserContext.Provider>
   );
 };
 

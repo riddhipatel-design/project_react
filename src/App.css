@@ -31,15 +31,10 @@ width: 150px;
 .res-card {
  margin: 10px;
     padding: 5px;
-   
+   cursor: pointer;
+   box-shadow: 1px 2px 3px 1px , rgb(0 0 0 / 0.1);
 }
-.res-card:hover {
-     transform: scale(1.05);
-     cursor: pointer;
-      transition-property: all; /* or a specific property like 'transform' or 'opacity' */
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-}
+
 .res-card img {
     padding: 0px;
 }
