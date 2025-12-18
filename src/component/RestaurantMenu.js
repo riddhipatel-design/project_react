@@ -5,6 +5,7 @@ import { Menu_API } from "../utils/constant";
 import { mockRestaurantMenu } from "../utils/mockData";
 import { mockMenu } from "../utils/mockMenu";
 import MenuAccordion from "./MenuAccordion";
+import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 const RestaurantMenu = () => {
   const [resinfo, setResInfo] = useState(null);
@@ -13,13 +14,31 @@ const RestaurantMenu = () => {
 
   const { resId } = useParams();
 
-  useEffect(() => {
-    const restaurant = mockRestaurantMenu().find(
-      (res) => res.restaurant.id === resId
-    );
+ const fetchRestaurantInfo = async () => {
+  const data = await fetch(
+    "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.0120338&lng=72.51075399999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  );
 
-    setResInfo(restaurant);
-  }, [resId]);
+  const json = await data.json();
+
+  const cardWithRestaurants = json?.data?.cards?.find(
+    (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
+  );
+
+  const list =
+    cardWithRestaurants?.card?.card?.gridElements?.infoWithStyle
+      ?.restaurants || [];
+
+  const selectedRestaurant = list.find(
+    (res) => res.info.id === resId
+  );
+
+  setResInfo(selectedRestaurant?.info);
+};
+
+useEffect(() => {
+  fetchRestaurantInfo();
+}, [resId]);
 
   if (resinfo === null) return <Shimmer />;
 
@@ -30,12 +49,11 @@ const RestaurantMenu = () => {
     avgRating,
     deliveryTime,
     costForTwo,
-    address,
+    externalRatings,
     locality,
-  } = resinfo.restaurant;
+  } = resinfo;
 
-  // get the menu array
-  const menuItems = resinfo.menu;
+  
 
   //Accordion
    const { categories } = mockMenu;
@@ -55,21 +73,15 @@ const RestaurantMenu = () => {
         <h3 className="my-2 text-amber-800 font-medium">
           {cuisines.join(", ")}
         </h3>
-        <h3 className="my-2 font-medium">⏱ {deliveryTime}</h3>
+        <h3 className="my-2 font-medium">⏱ {resinfo?.sla.deliveryTime} mins</h3>
         <h4 className="my-2 font-medium">
-          Location: {locality}, {address.city}
+          Location: {locality}
         </h4>
-        <h2>Menu</h2>
-        <ul>
-          {menuItems.map((item) => (
-            <li key={item.id}>
-              {item.name} - {"₹"}
-              {item.price}
-            </li>
-          ))}
-        </ul>
+       
       </div>
-
+      <div className="my-3 text-2xl from-neutral-700 font-semibold flex justify-center">
+    <h2>Menu</h2><MdOutlineRestaurantMenu className="text-3xl from-neutral-700 font-semibold pt-2"/>
+     </div>
       {categories.map((category, index) => (
         <MenuAccordion
           key={category.title}

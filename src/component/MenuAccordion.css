@@ -11,6 +11,29 @@
   justify-content: space-between;
   font-size: 16px;
   font-weight: 500;
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+background: #e0e0e0;
+}
+
+.accordion-header:focus{
+  box-shadow: 0 0 0 2px #4B575B;
+}
+
+/* Keyboard focus */
+.accordion-header:focus-visible {
+  outline: none;
+  background: #e0e0e0;
+  box-shadow: 0 0 0 3px rgba(75, 87, 91, 0.4);
+}
+
+/* When accordion is open */
+.accordion-active {
+  background: #e0e0e0;
+  font-weight: 600;
 }
 
 .accordion-content {
@@ -20,6 +43,5 @@
 .item {
   margin-bottom: 8px;
   padding-bottom: 12px;
-  padding-top: 8px;
-  border-bottom: 1px solid #e0e0e0;
+  padding-top: 16px;
 }
