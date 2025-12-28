@@ -5,7 +5,9 @@ const RestaurantCard = (props) => {
     resData?.info;
   
     return (
-    <div className="res-card w-72 h-[380px] bg-gray-100 rounded-lg p-4 flex flex-col justify-between hover:bg-gray-200 shadow-lg transition-shadow duration-200">
+    <div 
+    data-testid="resCard"
+    className="res-card w-72 h-[380px] bg-gray-100 rounded-lg p-4 flex flex-col justify-between hover:bg-gray-200 shadow-lg transition-shadow duration-200">
       <div className="w-full h-50 overflow-hidden rounded-lg">
         <img
           src={

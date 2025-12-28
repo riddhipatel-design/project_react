@@ -1,7 +1,7 @@
 import { IoFastFoodOutline } from "react-icons/io5";
 import { LiaTrademarkSolid } from "react-icons/lia";
 import { useState, useContext } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
 import UserContext from "../utils/UserContext.js";
 import { GrCart } from "react-icons/gr";

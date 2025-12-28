@@ -9,7 +9,7 @@ import Contact from "./component/Contact";
 //import Grocery from "./component/Grocery";
 import Error from "./component/Error";
 import RestaurantMenu from "./component/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./component/RestaurantMenu";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";

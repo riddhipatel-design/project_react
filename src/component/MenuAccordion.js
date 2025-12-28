@@ -36,7 +36,7 @@ const MenuAccordion = ({ title, items, showItems, setOpenIndex }) => {
     {showItems && (
         <div className="accordion-content">
           {items.map((item) => (
-            <MenuItem key={item.id} item={item} />
+            <MenuItem data-testid="foodItems" key={item.id} item={item} />
           ))}
         </div>
       )}

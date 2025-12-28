@@ -2,7 +2,7 @@ import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState, useContext } from "react";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 
@@ -68,6 +68,7 @@ const Body = () => {
   <div className="search flex items-center gap-2">
     <input
       type="text"
+      data-testid = "searchInput"
       className="
         px-3 py-2 w-72 rounded-lg
         border border-gray-400

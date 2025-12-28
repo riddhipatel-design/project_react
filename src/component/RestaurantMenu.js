@@ -9,7 +9,6 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 const RestaurantMenu = () => {
   const [resinfo, setResInfo] = useState(null);
-
   const [openIndex, setOpenIndex] = useState(null);
 
   const { resId } = useParams();
