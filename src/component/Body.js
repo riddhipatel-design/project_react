@@ -54,7 +54,7 @@ const Body = () => {
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body flex flex-col items-center w-full pt-7 min-h-screen px-4">
+    <div className="body flex flex-col items-center w-full py-7 min-h-screen px-4">
       <div className="mb-6 text-center">
   <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">
     Order food & groceries
@@ -118,7 +118,7 @@ const Body = () => {
     Top Rated
   </button>
 
-  <div className="flex items-center gap-2">
+  { /* <div className="flex items-center gap-2">
     <label className="text-gray-600">Username:</label>
     <input
       className="
@@ -131,7 +131,7 @@ const Body = () => {
       value={loggedInUser}
       onChange={(e) => setUserName(e.target.value)}
     />
-  </div>
+  </div> */}
 
 </div>
 
