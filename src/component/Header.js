@@ -74,7 +74,7 @@ const Header = () => {
     ${isMenuOpen ? "block" : "hidden"}
     md:block transition-all duration-200
   `}>
-          <ul className="flex items-center gap-6 text-gray-700 font-medium flex-col md:flex-row md:gap-6 px-6 md:px-0 py-4 md:py-0">
+          <ul className="flex items-center gap-6 text-gray-700 font-medium flex-col md:flex-row md:gap-6 px-6 md:px-0 py-4 md:py-0"  onClick={() => setIsMenuOpen(false)}>
             <li className="flex items-center relative group">
          
   <span
@@ -82,6 +82,7 @@ const Header = () => {
     aria-label={onlineStatus ? "Online" : "Offline"}
     tabIndex={0}
     className="inline-flex items-center"
+    onClick={(e) => e.stopPropagation()} 
   >
     <GrStatusGoodSmall
       className={onlineStatus ? "text-green-600" : "text-red-600"}
@@ -108,7 +109,7 @@ const Header = () => {
               <Link
                 className="hover:text-amber-600"
                 to="/"
-                onClick={() => setIsMenuOpen(false)}
+               
               >
                 Home
               </Link>

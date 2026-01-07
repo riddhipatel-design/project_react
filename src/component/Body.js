@@ -23,7 +23,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    
 
     //  Dynamically find the card that actually contains restaurants
     const cardWithRestaurants = json?.data?.cards?.find(
@@ -33,7 +33,6 @@ const Body = () => {
     const list =
       cardWithRestaurants?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || [];
-    console.log(list);
 
     setListOfRestaurant(list);
     setFilteredRestaurent(list);
@@ -103,10 +102,13 @@ const Body = () => {
   <button
     className="
       px-4 py-2 rounded-lg
-      border-2 border-gray-300
-      text-gray-700
-      hover:bg-gray-100
+      border-2 border-gray-200
+      bg-gray-100
+      text-gray-800
+      hover:bg-gray-200
       transition
+       sm:w-auto
+    mx-auto
     "
     onClick={() => {
       const filteredList = listOfRestaurant.filter(
